@@ -70,6 +70,9 @@ Content-Type: application/json
         {
           "id": "shop_pay_1234",
           "version": "2026-01-11",
+          "available_instruments": [
+            {"type": "shop_pay"}
+          ],
           "config": {
             "merchant_id": "shop_merchant_123"
           }
@@ -152,7 +155,7 @@ UCP-Agent: profile="https://platform.example/profile"
 Content-Type: application/json
 
 {
-  "id": "chk_123456789",
+  "id": "chk_123456789", // deprecated: id is provided in URL path
   "buyer": {
     "email": "jane@example.com",
     "first_name": "Jane",
@@ -189,6 +192,9 @@ Content-Type: application/json
         {
           "id": "shop_pay_1234",
           "version": "2026-01-11",
+          "available_instruments": [
+            {"type": "shop_pay"}
+          ],
           "config": {
             "merchant_id": "shop_merchant_123"
           }
@@ -274,7 +280,7 @@ UCP-Agent: profile="https://platform.example/profile"
 Content-Type: application/json
 
 {
-  "id": "chk_123456789",
+  "id": "chk_123456789", // deprecated: id is provided in URL path
   "buyer": {
     "email": "jane@example.com",
     "first_name": "Jane",
@@ -472,7 +478,7 @@ UCP-Agent: profile="https://platform.example/profile"
 Content-Type: application/json
 
 {
-  "id": "chk_123456789",
+  "id": "chk_123456789", // deprecated: id is provided in URL path
   "buyer": {
     "email": "jane@example.com",
     "first_name": "Jane",
@@ -535,6 +541,9 @@ Content-Type: application/json
         {
           "id": "shop_pay_1234",
           "version": "2026-01-11",
+          "available_instruments": [
+            {"type": "shop_pay"}
+          ],
           "config": {
             "merchant_id": "shop_merchant_123"
           }
@@ -869,6 +878,9 @@ Content-Type: application/json
         {
           "id": "shop_pay_1234",
           "version": "2026-01-11",
+          "available_instruments": [
+            {"type": "shop_pay"}
+          ],
           "config": {
             "merchant_id": "shop_merchant_123"
           }
