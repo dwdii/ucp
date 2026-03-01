@@ -281,21 +281,23 @@ def on_page_markdown(markdown, page, config, files):
 
     # Rewrite relative links to assets/ to absolute URLs
     # pointing to served assets folder.
-    markdown = root_pages_asset_link_rewrite(markdown, base_path)
+    markdown = _root_pages_asset_link_rewrite(markdown, base_path)
 
   return markdown
 
 
-def root_pages_asset_link_rewrite(markdown, base_path):
+def _root_pages_asset_link_rewrite(markdown, base_path):
+  """Rewrite asset references in the root/overview to absolute links.
 
+  Uses regex to find and replace asset links with root based links.
+  """
   # Targeting the assets
   target_base = f"{base_path}assets/"
 
   def replace_link(match):
     path = match.group(1)
     # Including quotes back into the rendered new URL
-    output = f"\"{target_base}{path}\""
-    log.info(f"root_pages_asset_link_rewrite::replace_link: {path} -> {output}")
+    output = f'"{target_base}{path}"'
     return output
 
   # Pattern matches: (  prefix  assets/  path  )
